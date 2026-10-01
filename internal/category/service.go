@@ -2,6 +2,12 @@ package category
 
 import "context"
 
+type Service interface {
+	GetAllCategories(ctx context.Context) ([]CategoryRes, error)
+	CreateCategory(ctx context.Context, req CategoryReq) (*CategoryRes, error)
+	DeleteCategory(ctx context.Context, id int64) error
+}
+
 type service struct {
 	repo Repository
 }
