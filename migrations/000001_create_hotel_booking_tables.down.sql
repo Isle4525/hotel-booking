@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS hotels;
+DROP TABLE IF EXISTS room_types;
+DROP TABLE IF EXISTS amenities;
+DROP TABLE IF EXISTS hotel_amenities;
