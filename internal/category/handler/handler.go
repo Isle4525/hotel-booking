@@ -1,16 +1,19 @@
-package category
+package handler
 
 import (
 	"strconv"
+
+	"github.com/Isle4525/hotel-booking/internal/category/dto"
+	"github.com/Isle4525/hotel-booking/internal/category/service"
 
 	"github.com/gofiber/fiber/v2"
 )
 
 type Handler struct {
-	service Service
+	service service.Service
 }
 
-func NewHandler(service Service) *Handler {
+func NewHandler(service service.Service) *Handler {
 	return &Handler{service: service}
 }
 
@@ -33,7 +36,7 @@ func (h *Handler) GetAllCategories(c *fiber.Ctx) error {
 }
 
 func (h *Handler) CreateCategory(c *fiber.Ctx) error {
-	var req CategoryReq
+	var req dto.CategoryReq
 	if err := c.BodyParser(&req); err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"error": "Invalid request body",

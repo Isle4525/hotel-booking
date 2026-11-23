@@ -2,14 +2,13 @@ package hotel
 
 import "time"
 
-
-type HotelReq{
-	Name string `json: name`
-	Slug string `json: slug`
-	City string `json: city`
-	Address string `json: adress`
-	Description string `json: description`
-	ImageURL string `json: image_url` 
+type HotelReq struct {
+	Name          string    `json:"name"`
+	Slug          string    `json:"slug"`
+	City          string    `json:"city"`
+	Address       string    `json:"adress"`
+	Description   string    `json:"description"`
+	ImageURL      string    `json:"image_url"`
 	StartingPrice *float64  `json:"starting_price"`
 	Currency      string    `json:"currency"`
 	Rating        *float64  `json:"rating"`
@@ -20,16 +19,13 @@ type HotelReq{
 	UpdatedAt     time.Time `json:"updated_at"`
 }
 
-
-
-type HotelRes{
-
-	Name string `json: name`
-	Slug string `json: slug`
-	City string `json: city`
-	Address string `json: adress`
-	Description string `json: description`
-	ImageURL string `json: image_url` 
+type HotelRes struct {
+	Name          string    `json:"name"`
+	Slug          string    `json:"slug"`
+	City          string    `json:"city"`
+	Address       string    `json:"adress"`
+	Description   string    `json:"description"`
+	ImageURL      string    `json:"image_url"`
 	StartingPrice *float64  `json:"starting_price"`
 	Currency      string    `json:"currency"`
 	Rating        *float64  `json:"rating"`
